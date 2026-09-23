@@ -1,0 +1,30 @@
+# Homebrew's tap-syntax checks (style, readall, audit) on every push the
+# release workflow makes. This file is written into tiefgang-gmbh/homebrew-tap
+# by infra/pulumi/release (a RepositoryFile resource); edit it there, never
+# in the tap.
+name: tap-syntax
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tap-syntax:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+
+      # The runner's Homebrew must see this checkout as the tap.
+      - name: Tap this checkout
+        run: brew tap tiefgang-gmbh/tap "$GITHUB_WORKSPACE"
+
+      - name: Tap syntax
+        run: brew test-bot --only-tap-syntax --tap=tiefgang-gmbh/tap
