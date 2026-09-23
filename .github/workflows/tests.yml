@@ -22,9 +22,17 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      # The runner image carries Homebrew under /home/linuxbrew but not on
+      # PATH (Homebrew's own setup action, which would add it, is published
+      # from a branch only — no tag to pin).
+      - name: Put Homebrew on PATH
+        run: echo "/home/linuxbrew/.linuxbrew/bin" >> "$GITHUB_PATH"
+
       # The runner's Homebrew must see this checkout as the tap.
       - name: Tap this checkout
         run: brew tap tiefgang-gmbh/tap "$GITHUB_WORKSPACE"
 
       - name: Tap syntax
-        run: brew test-bot --only-tap-syntax --tap=tiefgang-gmbh/tap
+        run: |
+          brew tap homebrew/test-bot
+          brew test-bot --only-tap-syntax --tap=tiefgang-gmbh/tap
