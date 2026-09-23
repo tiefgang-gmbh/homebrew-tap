@@ -32,7 +32,7 @@ jobs:
       - name: Tap this checkout
         run: brew tap tiefgang-gmbh/tap "$GITHUB_WORKSPACE"
 
+      # test-bot is a built-in developer command since its tap
+      # (homebrew/test-bot) was emptied and deprecated.
       - name: Tap syntax
-        run: |
-          brew tap homebrew/test-bot
-          brew test-bot --only-tap-syntax --tap=tiefgang-gmbh/tap
+        run: brew test-bot --only-tap-syntax --tap=tiefgang-gmbh/tap
