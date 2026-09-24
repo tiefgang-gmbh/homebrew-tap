@@ -2,9 +2,9 @@
 class TgAlpha < Formula
   desc "Agent for tiefgang.sh self-hosted runners (alpha channel)"
   homepage "https://tiefgang.sh"
-  url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.11/SHA256SUMS"
-  version "0.1.1-alpha.11"
-  sha256 "09055d70808b6c63d18c504341390c53e4d759e44d732e6175f3f3d94bd159ae"
+  url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.12/SHA256SUMS"
+  version "0.1.1-alpha.12"
+  sha256 "ca42901db30206d49834230e779d90b5d769756d5385029e5849cf79bba5cbd3"
 
   on_macos do
     depends_on arch: :arm64
@@ -12,17 +12,17 @@ class TgAlpha < Formula
 
   resource "tarball" do
     on_macos do
-      url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.11/tg_0.1.1-alpha.11_darwin_arm64.tar.gz"
-      sha256 "b5c0426ead0939d61f2a9521b17c4f18e515ec2fd9cd1c3d6e36f608c6a30f42"
+      url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.12/tg_0.1.1-alpha.12_darwin_arm64.tar.gz"
+      sha256 "c34d7dfcbbab868b8ca97925d58966d93e0d136e2faed0de50960036e2c9c609"
     end
     on_linux do
       on_arm do
-        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.11/tg_0.1.1-alpha.11_linux_arm64.tar.gz"
-        sha256 "aa28d756f9dac90b7450be408de3c949a184063b03756fa97600317fec5e8a39"
+        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.12/tg_0.1.1-alpha.12_linux_arm64.tar.gz"
+        sha256 "f829950aa1fa2f0f6bd857ba3063e5761acba8151eda9174f063161c7612813b"
       end
       on_intel do
-        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.11/tg_0.1.1-alpha.11_linux_amd64.tar.gz"
-        sha256 "90ec226a1d428e2713b3a2ce3f3b2f647f21b486404323a7a175b3379dff3583"
+        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.12/tg_0.1.1-alpha.12_linux_amd64.tar.gz"
+        sha256 "fceda79f14137cb8f44c0bbfa7d7ee72db0566e262545f4967db78bdb53d7dda"
       end
     end
   end
