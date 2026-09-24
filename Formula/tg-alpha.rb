@@ -2,9 +2,9 @@
 class TgAlpha < Formula
   desc "Agent for tiefgang.sh self-hosted runners (alpha channel)"
   homepage "https://tiefgang.sh"
-  url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.2-alpha.2/SHA256SUMS"
-  version "0.1.2-alpha.2"
-  sha256 "12e4e6a0269ebcb7729b8151622e49cdb8f8de578a6c1d389b6b511344dbee72"
+  url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.2-alpha.3/SHA256SUMS"
+  version "0.1.2-alpha.3"
+  sha256 "de15494ac4df69b58c252b0063244e1abf5b113539dc8fb066b2379f357928e5"
 
   on_macos do
     depends_on arch: :arm64
@@ -14,17 +14,17 @@ class TgAlpha < Formula
 
   resource "tarball" do
     on_macos do
-      url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.2-alpha.2/tg_0.1.2-alpha.2_darwin_arm64.tar.gz"
-      sha256 "1082366a102c18030ab9bdb067adf392b91a1b2ece2b2214825260a7d60723fd"
+      url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.2-alpha.3/tg_0.1.2-alpha.3_darwin_arm64.tar.gz"
+      sha256 "1c653641e7f9b1b56c9814e3ba91f0f926f26355954957382f99388243d9b8d4"
     end
     on_linux do
       on_arm do
-        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.2-alpha.2/tg_0.1.2-alpha.2_linux_arm64.tar.gz"
-        sha256 "ca711a78ff906998ddd74f1d83857b690c03e9b865ceb736541e34dce8eaf48a"
+        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.2-alpha.3/tg_0.1.2-alpha.3_linux_arm64.tar.gz"
+        sha256 "5e21d089e813ef12c3ad2d9495b0b84c31677f2469b71713402db024448c10bc"
       end
       on_intel do
-        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.2-alpha.2/tg_0.1.2-alpha.2_linux_amd64.tar.gz"
-        sha256 "65f5229249e3a73323537b4133abf56e7f0b7e0e0606af4e8df61d7a2e9f239c"
+        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.2-alpha.3/tg_0.1.2-alpha.3_linux_amd64.tar.gz"
+        sha256 "58f706ce540d89b4cc8bc551ec2657640ce11f07c681b1eaaea6a9102f065bed"
       end
     end
   end
