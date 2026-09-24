@@ -4,7 +4,7 @@ The Homebrew tap of [tiefgang.sh](https://tiefgang.sh). Two formulas,
 both installing the same `bin/tg`:
 
     brew install tiefgang-gmbh/tap/tg          # stable
-    brew install tiefgang-gmbh/tap/tg@alpha    # every release, including alphas
+    brew install tiefgang-gmbh/tap/tg-alpha    # every release, including alphas
 
 The formulas are written by the release workflow on every release —
 nobody commits here by hand. Each formula names a prebuilt binary and
