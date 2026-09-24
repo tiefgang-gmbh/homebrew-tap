@@ -28,7 +28,9 @@ jobs:
       - name: Put Homebrew on PATH
         run: echo "/home/linuxbrew/.linuxbrew/bin" >> "$GITHUB_PATH"
 
-      # The runner's Homebrew must see this checkout as the tap.
+      # The runner's Homebrew must see this checkout as the tap. test-bot
+      # trusts the tap under test itself before its checks (Homebrew 6+
+      # tap trust), so nothing here needs to.
       - name: Tap this checkout
         run: brew tap tiefgang-gmbh/tap "$GITHUB_WORKSPACE"
 
