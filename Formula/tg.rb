@@ -9,8 +9,6 @@ class Tg < Formula
     depends_on arch: :arm64
   end
 
-  conflicts_with "tg-alpha", because: "both install bin/tg"
-
   resource "tarball" do
     on_macos do
       url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1/tg_0.1.1_darwin_arm64.tar.gz"
@@ -36,6 +34,8 @@ class Tg < Formula
     <<~EOS
       The formula installs no service. To run the agent as a daemon (root is required):
         sudo #{HOMEBREW_PREFIX}/bin/tg service install --channel stable
+      Run the same command after every `brew upgrade`: Homebrew replaces the binary, not the
+      running daemon, and the command drains the daemon and restarts it on the new version.
     EOS
   end
 
