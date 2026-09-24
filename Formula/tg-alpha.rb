@@ -2,9 +2,9 @@
 class TgAlpha < Formula
   desc "Agent for tiefgang.sh self-hosted runners (alpha channel)"
   homepage "https://tiefgang.sh"
-  url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.12/SHA256SUMS"
-  version "0.1.1-alpha.12"
-  sha256 "ca42901db30206d49834230e779d90b5d769756d5385029e5849cf79bba5cbd3"
+  url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.14/SHA256SUMS"
+  version "0.1.1-alpha.14"
+  sha256 "ef500f3f9b1d75d43419d7002a8237515db7e411b00870bfdab8ae7dec45233f"
 
   on_macos do
     depends_on arch: :arm64
@@ -12,17 +12,17 @@ class TgAlpha < Formula
 
   resource "tarball" do
     on_macos do
-      url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.12/tg_0.1.1-alpha.12_darwin_arm64.tar.gz"
-      sha256 "c34d7dfcbbab868b8ca97925d58966d93e0d136e2faed0de50960036e2c9c609"
+      url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.14/tg_0.1.1-alpha.14_darwin_arm64.tar.gz"
+      sha256 "fcca6519544ce25cb74afe228d32294d7ed7df2501fcf881641632f433ebe514"
     end
     on_linux do
       on_arm do
-        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.12/tg_0.1.1-alpha.12_linux_arm64.tar.gz"
-        sha256 "f829950aa1fa2f0f6bd857ba3063e5761acba8151eda9174f063161c7612813b"
+        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.14/tg_0.1.1-alpha.14_linux_arm64.tar.gz"
+        sha256 "6500c8326f5c19ad65571b88af4293a3deb3126c1d4391a91585d89ae1e7df64"
       end
       on_intel do
-        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.12/tg_0.1.1-alpha.12_linux_amd64.tar.gz"
-        sha256 "fceda79f14137cb8f44c0bbfa7d7ee72db0566e262545f4967db78bdb53d7dda"
+        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.14/tg_0.1.1-alpha.14_linux_amd64.tar.gz"
+        sha256 "2aaf558d70642aa8d483ec48a6a0b3317a1f32def738834b1fdf89954288b5ca"
       end
     end
   end
