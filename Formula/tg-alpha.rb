@@ -2,29 +2,27 @@
 class TgAlpha < Formula
   desc "Agent for tiefgang.sh self-hosted runners (alpha channel)"
   homepage "https://tiefgang.sh"
-  url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.10/SHA256SUMS"
-  version "0.1.1-alpha.10"
-  sha256 "5868849c0d40a056c9b3a5164bbd3b65adfae79c670b0c15f7f2258bb52595ef"
+  url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.11/SHA256SUMS"
+  version "0.1.1-alpha.11"
+  sha256 "09055d70808b6c63d18c504341390c53e4d759e44d732e6175f3f3d94bd159ae"
 
   on_macos do
     depends_on arch: :arm64
   end
 
-  conflicts_with "tg", because: "both install bin/tg"
-
   resource "tarball" do
     on_macos do
-      url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.10/tg_0.1.1-alpha.10_darwin_arm64.tar.gz"
-      sha256 "49f637983be5bbcce834b4f0552380fb1ea29de05a2988a2fdea636770e78646"
+      url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.11/tg_0.1.1-alpha.11_darwin_arm64.tar.gz"
+      sha256 "b5c0426ead0939d61f2a9521b17c4f18e515ec2fd9cd1c3d6e36f608c6a30f42"
     end
     on_linux do
       on_arm do
-        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.10/tg_0.1.1-alpha.10_linux_arm64.tar.gz"
-        sha256 "9d26b04263798d3ed59e80d2deeb724b5af545f9c8f6d248666c9d38dfe18238"
+        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.11/tg_0.1.1-alpha.11_linux_arm64.tar.gz"
+        sha256 "aa28d756f9dac90b7450be408de3c949a184063b03756fa97600317fec5e8a39"
       end
       on_intel do
-        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.10/tg_0.1.1-alpha.10_linux_amd64.tar.gz"
-        sha256 "8417c1b3fcfe2b047b99983f911b029f6e327647f7783ef86d36b648b34f5a0a"
+        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1-alpha.11/tg_0.1.1-alpha.11_linux_amd64.tar.gz"
+        sha256 "90ec226a1d428e2713b3a2ce3f3b2f647f21b486404323a7a175b3379dff3583"
       end
     end
   end
