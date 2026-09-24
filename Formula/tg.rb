@@ -1,6 +1,6 @@
 # Rendered by the tiefgang.sh release workflow on every release; never edited by hand.
-class TgAlpha < Formula
-  desc "Agent for tiefgang.sh self-hosted runners (alpha channel)"
+class Tg < Formula
+  desc "Agent for tiefgang.sh self-hosted runners"
   homepage "https://tiefgang.sh"
   url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.1/SHA256SUMS"
   sha256 "79f230339d28449ef243de4983d7c9792828d05e765a178f54082937ad516d5f"
@@ -9,7 +9,7 @@ class TgAlpha < Formula
     depends_on arch: :arm64
   end
 
-  conflicts_with "tg", because: "both install bin/tg"
+  conflicts_with "tg-alpha", because: "both install bin/tg"
 
   resource "tarball" do
     on_macos do
@@ -35,7 +35,7 @@ class TgAlpha < Formula
   def caveats
     <<~EOS
       The formula installs no service. To run the agent as a daemon (root is required):
-        sudo #{HOMEBREW_PREFIX}/bin/tg service install --channel alpha
+        sudo #{HOMEBREW_PREFIX}/bin/tg service install --channel stable
     EOS
   end
 
