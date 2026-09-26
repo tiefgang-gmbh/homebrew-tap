@@ -32,7 +32,7 @@ class Tg < Formula
 
   def caveats
     <<~EOS
-      The formula installs no service. To run the agent as a daemon (root is required):
+      The formula installs no service. To run the agent as a daemon (root is required; the command names the login step):
         sudo #{HOMEBREW_PREFIX}/bin/tg service install --channel stable
       Run the same command after every `brew upgrade`: Homebrew replaces the binary, not the
       running daemon, and the command drains the daemon and restarts it on the new version.
