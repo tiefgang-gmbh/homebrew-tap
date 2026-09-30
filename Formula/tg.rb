@@ -2,8 +2,8 @@
 class Tg < Formula
   desc "Agent for tiefgang.sh self-hosted runners"
   homepage "https://tiefgang.sh"
-  url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.5/SHA256SUMS"
-  sha256 "d1b6a973f0f8bea9d0b1ab5e4b0a79885da666083ca05bf0d6de398a9dd0d3a1"
+  url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.6/SHA256SUMS"
+  sha256 "cb4fa0a8ebcef7c36c6c9ea88996ee9bb066188af0004a41aea6601d0d2dd6bd"
 
   on_macos do
     depends_on arch: :arm64
@@ -11,17 +11,17 @@ class Tg < Formula
 
   resource "tarball" do
     on_macos do
-      url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.5/tg_0.1.5_darwin_arm64.tar.gz"
-      sha256 "91e79ddd302f03c1c267c1656b934e0a2ba04ac0f2619ee5282be1b3c0d5c2ea"
+      url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.6/tg_0.1.6_darwin_arm64.tar.gz"
+      sha256 "98bd4ead39080cf2353d04bd77ceb8f3e57bcf0ddce00dd160b0786395e54db2"
     end
     on_linux do
       on_arm do
-        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.5/tg_0.1.5_linux_arm64.tar.gz"
-        sha256 "5900960619e93f7d6e2075ef72554015a128a75c54018b3cb258fa12f3218801"
+        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.6/tg_0.1.6_linux_arm64.tar.gz"
+        sha256 "c2340c11d443739f120a412ce39ae546d02548e9133d222762d3e0f1707af192"
       end
       on_intel do
-        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.5/tg_0.1.5_linux_amd64.tar.gz"
-        sha256 "546f02e5d99508a4330724bbaf5092d1968c2a11dcd860a3c72d068ce812e8b6"
+        url "https://tiefgang-releases.fsn1.your-objectstorage.com/tg/releases/0.1.6/tg_0.1.6_linux_amd64.tar.gz"
+        sha256 "e12bf14c667e43f164a55d54c103efc7aea5e3a05013eb85f1e7ced856422c9b"
       end
     end
   end
