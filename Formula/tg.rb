@@ -7,6 +7,7 @@ class Tg < Formula
 
   on_macos do
     depends_on arch: :arm64
+    depends_on macos: :ventura
   end
 
   resource "tarball" do
