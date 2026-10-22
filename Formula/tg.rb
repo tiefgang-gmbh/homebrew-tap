@@ -31,13 +31,48 @@ class Tg < Formula
     resource("tarball").stage { bin.install "tg" }
   end
 
+  # The same steps the install script names after an install: where the
+  # host runs no service, running the agent as yourself first, then the
+  # service; where it does, the service alone. On a Mac the service runs
+  # tg as root, so tg service install refuses a tg another account could
+  # replace, as Homebrew's is: the service needs a system-wide copy, in
+  # /usr/local/bin unless that directory is not root's alone, then in
+  # /opt/tiefgang/bin.
   def caveats
-    <<~EOS
-      The formula installs no service. To run the agent as a daemon (root is required; the command names the login step):
-        sudo #{HOMEBREW_PREFIX}/bin/tg service install --channel stable
-      After every `brew upgrade`, run sudo #{HOMEBREW_PREFIX}/bin/tg service restart: Homebrew replaces
-      the binary, not the running daemon, and the command drains the daemon and starts it again on the new version.
-    EOS
+    service_host = File.exist?("/etc/tg/agent.env")
+    intro = if service_host
+      "This host runs the agent as a system service; to move it onto this version, set it up again"
+    else
+      "On a machine of its own, run the agent as a system service instead"
+    end
+    if OS.mac?
+      root_only = Pathname("/usr/local/bin").ascend.all? do |d|
+        !d.exist? || (d.stat.uid.zero? && (d.stat.sticky? || d.stat.mode.nobits?(0022)))
+      end
+      dir = root_only ? "/usr/local/bin" : "/opt/tiefgang/bin"
+      yourself = <<~EOS
+        To run the agent as yourself: tg login, then tg
+        After every `brew upgrade`, start it again on the new version: tg drain, then tg
+      EOS
+      (service_host ? "" : yourself) + <<~EOS
+        #{intro}, from a system-wide tg (root is required; the last command names the login step):
+          brew uninstall tg
+          curl -fsSL https://tiefgang-releases.fsn1.your-objectstorage.com/tg/install.sh | sudo sh -s -- --install-dir #{dir} --channel stable
+          sudo #{dir}/tg service install --channel stable
+        The service runs tg as root, and tg service install refuses a tg another account could replace, as Homebrew's is.
+      EOS
+    else
+      yourself = <<~EOS
+        To run the agent as yourself: tg doctor --fix, then tg login, then tg
+        After every `brew upgrade`, start it again on the new version: tg drain, then tg doctor --fix, then tg
+      EOS
+      (service_host ? "" : yourself) + <<~EOS
+        #{intro} (root is required; the command names the login step):
+          sudo #{HOMEBREW_PREFIX}/bin/tg service install --channel stable
+        After every `brew upgrade`, run sudo #{HOMEBREW_PREFIX}/bin/tg service restart: Homebrew replaces
+        the binary, not the running daemon, and the command drains the daemon and starts it again on the new version.
+      EOS
+    end
   end
 
   test do
